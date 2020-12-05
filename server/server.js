@@ -1,7 +1,7 @@
 require('./config/config')
 const express = require('express')
 const mongoose = require('mongoose');
-const app = express()
+const app = express();
 const bodyParser = require('body-parser');
 
 
@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({
 // parse application/json
 app.use(bodyParser.json())
 
-
-app.use(require('./controllers/usuario'));
+//Configuracion global de rutas o controllers
+app.use(require('./controllers/index'));
 
 mongoose.connect(process.env.URLDB, {
         useNewUrlParser: true,
